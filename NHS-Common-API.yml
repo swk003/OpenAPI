@@ -116,12 +116,12 @@ components:
 # Reusable responses
 #-------------------------------
  responses:
-    200:               # Can be referenced as '#/components/responses/200'
+    200:             # Can be referenced as '#/components/responses/200'
       description: OK
-    400:              # Can be referenced as '#/components/responses/400'  
+    400:             # Can be referenced as '#/components/responses/400'  
       description: Bad request
-    404:       # Can be referenced as '#/components/responses/404'
+    404:             # Can be referenced as '#/components/responses/404'
       description: Not Found.  
-    500:
+    500:             # Can be referenced as '#/components/responses/500'  
       description: Internal Server Error
 paths: {}
