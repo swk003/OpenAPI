@@ -116,12 +116,40 @@ components:
 # Reusable responses
 #-------------------------------
  responses:
-    200:             # Can be referenced as '#/components/responses/200'
+    200:
       description: OK
-    400:             # Can be referenced as '#/components/responses/400'  
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    400:
       description: Bad request
-    404:             # Can be referenced as '#/components/responses/404'
-      description: Not Found.  
-    500:             # Can be referenced as '#/components/responses/500'  
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    404:
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    500:
       description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    # Schema for error response body
+  schemas:
+    Error:
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+      required:
+        - code
+        - message
 paths: {}
